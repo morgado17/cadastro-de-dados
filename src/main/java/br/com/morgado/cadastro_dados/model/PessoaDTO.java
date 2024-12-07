@@ -19,7 +19,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * 
+ * Objeto que representa o usuário no banco.
  */
 @Getter
 @Setter
