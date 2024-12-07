@@ -5,12 +5,14 @@ package br.com.morgado.cadastro_dados.model;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -49,5 +51,8 @@ public class PessoaDTO {
 	
 	@Column(name = "data_cadastro", nullable = false, insertable = true, unique = false, updatable = true)
 	private LocalDateTime cadastro;
+	
+	@OneToMany(mappedBy = "pessoa")
+	private List<EntradaDTO> entradas;
 
 }
